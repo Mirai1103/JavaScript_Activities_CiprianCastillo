@@ -1,0 +1,36 @@
+<html>
+<script>
+let Grade = prompt ("Enter Grade");
+Grade =parseInt(Grade);
+
+let str="";
+
+if (Grade <= 100 && Grade >= 90){
+    str = "S grade";
+}
+else if(Grade < 90 && Grade >=80){
+    str = "A grade";
+}
+if (Grade < 80 && Grade >= 70){
+    str = "B grade";
+}
+else if(Grade < 70 && Grade >= 60){
+    str = "C grade";
+}
+if (Grade < 60 && Grade >= 50){
+    str = "D grade";
+}
+else if(Grade < 50 && Grade >= 40){
+    str = "E grade";
+}
+if (Grade <= 40){
+    str = "Student Failed";
+}
+else if (Grade < 0 && Grade > 100) {
+    str ="Invalid Remarks";
+}
+
+
+console.log(str)
+</script>
+</html>

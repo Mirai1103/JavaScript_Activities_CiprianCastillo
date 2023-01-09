@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JSLoops and Functions</title>
+</head>
+<body>
+        <h1>Displaying of Numbers</h1>
+        <div id="numbers"></div>
+<script>
+    function displayNumbers() {
+      let numbersHtml = '';
+      for (let i = 1; i <= 10; i++) {
+        numbersHtml += i + '<br>';
+      }
+      document.getElementById('numbers').innerHTML = numbersHtml;
+    }
+    displayNumbers();
+    </script>
+
+        <h1>Even Numbers</h1>
+        <div id="even-numbers"></div>
+
+<script>
+
+    function getEvenNumbers(numbers) {
+    let evenNumbers = [];
+        for (let x = 0; x < numbers.length; x++) {
+        if (numbers[x] % 2 === 0) {
+            evenNumbers.push(numbers[x]);
+    }
+  }
+  return evenNumbers;
+}
+
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let evens = getEvenNumbers(array);
+document.getElementById('even-numbers').innerHTML = evens.join(', ');
+
+</script>
+
+        <h1>Print Pattern</h1>
+        <div id ="Patter"></div>
+<script>
+ function displayPattern() {
+    let str = '';
+    for (let i = 1; i <= 5; i++) {
+      for (let j = 1; j <= i; j++) {
+        str += j + ' ';
+      }
+      str += '<br>';
+    }
+    document.write(str);
+  }
+  
+  displayPattern();
+</script>
+
+        <h1> Count Letters</h1>
+        <div id="letter-count"></div>
+<script>
+   function countLetters(str) {
+    let count = 0;
+    for (let y = 0; y < str.length; y++) {
+      count++;
+    }
+    return count;
+  }
+
+  const word = "WD42P";
+  const letterCount = countLetters(word);
+  document.getElementById('letter-count').innerHTML = letterCount;
+
+    </script>
+        <h1>Convert Hours into seconds</h1>
+        <p>Enter the number of hours: <input type="text" id="hours"></p>
+        <button onclick="convert()">Convert</button>
+        <div id="result"></div>
+    <script>
+          function convertHoursToSeconds(hours) {
+            const minutesInHour = 60;
+            const secondsInMinute = 60;
+            return hours * minutesInHour * secondsInMinute;
+          }
+      
+          function convert() {
+            const hours = document.getElementById('hours').value;
+            const seconds = convertHoursToSeconds(hours);
+            document.getElementById('result').innerHTML = `${hours} hours is equal to ${seconds} seconds.`;
+          }
+        </script>
+
+</body>
+</html>

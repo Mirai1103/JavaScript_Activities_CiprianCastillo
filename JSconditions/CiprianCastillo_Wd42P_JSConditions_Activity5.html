@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Days in Month</title>
+</head>
+<body>
+  <p>Enter the month and year:</p>
+  <p>Month: <input type="text" id="month"></p>
+  <p>Year: <input type="text" id="year"></p>
+  <button onclick="findDays()">Find Days</button>
+  <div id="result"></div>
+  <script>
+    function findDaysInMonth(month, year) {
+      if (month < 1 || month > 12) {
+        return "Invalid month";
+      }
+      if (month === 2) {
+        if (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) {
+          return "29 days";
+        } else {
+          return "28 days";
+        }
+      }
+      if ([4, 6, 9, 11].includes(month)) {
+        return "30 days";
+      }
+      return "31 days";
+    }
+
+    function findDays() {
+      const month = document.getElementById('month').value;
+      const year = document.getElementById('year').value;
+      const days = findDaysInMonth(month, year);
+      document.getElementById('result').innerHTML = `The month has ${days}.`;
+    }
+  </script>
+</body>
+</html>
